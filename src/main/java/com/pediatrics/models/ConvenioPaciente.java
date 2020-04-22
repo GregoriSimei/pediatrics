@@ -1,7 +1,5 @@
 package com.pediatrics.models;
 
-import java.util.ArrayList;
-
 public class ConvenioPaciente {
 
 	private long id;
