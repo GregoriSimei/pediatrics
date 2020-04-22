@@ -1,6 +1,8 @@
 package com.pediatrics.models;
 
 public class Doutor extends Pessoa{
+
+	private static final long serialVersionUID = 1L;
 	
 	private String especializacao;
 	private String crm;

@@ -4,16 +4,9 @@ import java.util.ArrayList;
 
 public class Responsavel extends Pessoa{
 
-	private long id;
+	private static final long serialVersionUID = 1L;
+	
 	private ArrayList<Crianca> crianca;
-
-	public long getId() {
-		return this.id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public ArrayList<Crianca> getCrianca() {
 		return this.crianca;
