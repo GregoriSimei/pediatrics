@@ -3,8 +3,8 @@ package com.pediatrics.models;
 public class Vacina {
 
 	private long id;
-	private String type;
-	private String date;
+	private String tipo;
+	private String data;
 	
 	public long getId() {
 		return this.id;
@@ -12,17 +12,17 @@ public class Vacina {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getType() {
-		return this.type;
+	public String getTipo() {
+		return this.tipo;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
-	public String getDate() {
-		return this.date;
+	public String getData() {
+		return this.data;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setData(String data) {
+		this.data = data;
 	}
 	
 }
