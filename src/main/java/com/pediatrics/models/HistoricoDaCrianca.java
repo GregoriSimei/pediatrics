@@ -1,12 +1,25 @@
 package com.pediatrics.models;
 
-import java.util.ArrayList;
+import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "historicos")
 public class HistoricoDaCrianca {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private ArrayList<MedidasDaCrianca> medidas;
-	private ArrayList<Vacina> vacinas;
+	@OneToMany
+	private Set<MedidasDaCrianca> medidas;
+	@OneToMany
+	private Set<Vacina> vacinas;
 	
 	public long getId() {
 		return this.id;
@@ -14,16 +27,16 @@ public class HistoricoDaCrianca {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public ArrayList<MedidasDaCrianca> getMedidas() {
+	public Set<MedidasDaCrianca> getMedidas() {
 		return this.medidas;
 	}
-	public void setMedidas(ArrayList<MedidasDaCrianca> medidas) {
+	public void setMedidas(Set<MedidasDaCrianca> medidas) {
 		this.medidas = medidas;
 	}
-	public ArrayList<Vacina> getVacinas() {
+	public Set<Vacina> getVacinas() {
 		return this.vacinas;
 	}
-	public void setVacinas(ArrayList<Vacina> vacinas) {
+	public void setVacinas(Set<Vacina> vacinas) {
 		this.vacinas = vacinas;
 	}
 	

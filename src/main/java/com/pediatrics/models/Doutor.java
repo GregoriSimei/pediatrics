@@ -1,10 +1,17 @@
 package com.pediatrics.models;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "doutores")
 public class Doutor extends Pessoa{
 
-	private static final long serialVersionUID = 1L;
-	
+	@JoinColumn(nullable = false)
 	private String especializacao;
+	
+	@JoinColumn(nullable = false)
 	private String crm;
 	
 	public String getEspecializacao() {
