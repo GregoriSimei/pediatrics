@@ -1,11 +1,12 @@
 package com.pediatrics.models;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -16,10 +17,14 @@ public class HistoricoDaCrianca {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	@OneToMany
-	private Set<MedidasDaCrianca> medidas;
-	@OneToMany
-	private Set<Vacina> vacinas;
+	
+	@OneToMany(targetEntity = MedidasDaCrianca.class)
+	@JoinColumn(name = "historico_id", nullable = true)
+	private List<MedidasDaCrianca> medidas;
+	
+	@OneToMany(targetEntity = Vacina.class)
+	@JoinColumn(name = "historico_id", nullable = true)
+	private List<Vacina> vacinas;
 	
 	public long getId() {
 		return this.id;
@@ -27,16 +32,16 @@ public class HistoricoDaCrianca {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public Set<MedidasDaCrianca> getMedidas() {
+	public List<MedidasDaCrianca> getMedidas() {
 		return this.medidas;
 	}
-	public void setMedidas(Set<MedidasDaCrianca> medidas) {
+	public void setMedidas(List<MedidasDaCrianca> medidas) {
 		this.medidas = medidas;
 	}
-	public Set<Vacina> getVacinas() {
+	public List<Vacina> getVacinas() {
 		return this.vacinas;
 	}
-	public void setVacinas(Set<Vacina> vacinas) {
+	public void setVacinas(List<Vacina> vacinas) {
 		this.vacinas = vacinas;
 	}
 	
