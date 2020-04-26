@@ -1,13 +1,11 @@
 package com.pediatrics.models;
 
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -41,16 +39,16 @@ public class Prontuario {
 	public void setCrianca(Crianca crianca) {
 		this.crianca = crianca;
 	}
-	public Set<Encaminhamento> getEncaminhamentos() {
+	public List<Encaminhamento> getEncaminhamentos() {
 		return this.encaminhamentos;
 	}
-	public void setEncaminhamentos(Set<Encaminhamento> encaminhamentos) {
+	public void setEncaminhamentos(List<Encaminhamento> encaminhamentos) {
 		this.encaminhamentos = encaminhamentos;
 	}
-	public Set<Medicamento> getMedicamentos() {
+	public List<Medicamento> getMedicamentos() {
 		return this.medicamentos;
 	}
-	public void setMedicamentos(Set<Medicamento> medicamentos) {
+	public void setMedicamentos(List<Medicamento> medicamentos) {
 		this.medicamentos = medicamentos;
 	}
 	
