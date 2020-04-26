@@ -1,4 +1,4 @@
-package com.pediatrics.models;
+package com.pediatrics.app.model;
 
 import java.io.Serializable;
 
@@ -10,9 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "vacinas")
-public class Vacina implements Serializable{
-
+@Table(name = "encaminhamentos")
+public class Encaminhamento implements Serializable{
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -20,28 +20,33 @@ public class Vacina implements Serializable{
 	private long id;
 	
 	@JoinColumn(nullable = false)
-	private String tipo;
+	private String especializacao;
 	
 	@JoinColumn(nullable = false)
-	private String data;
+	private String localizacao;
 	
 	public long getId() {
 		return this.id;
 	}
+	
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getTipo() {
-		return this.tipo;
+	
+	public String getEspecializacao() {
+		return this.especializacao;
 	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	
+	public void setEspecializacao(String especializacao) {
+		this.especializacao = especializacao;
 	}
-	public String getData() {
-		return this.data;
+	
+	public String getLocalizacao() {
+		return this.localizacao;
 	}
-	public void setData(String data) {
-		this.data = data;
+	
+	public void setLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
 	}
 	
 }
