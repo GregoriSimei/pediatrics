@@ -1,11 +1,33 @@
 package com.pediatrics.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "pagamentos")
 public class Pagamento {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	
+	@JoinColumn(nullable = false)
 	private double valor;
+	
+	@JoinColumn(name = "convenio")
+	@JoinColumn(nullable = false)
 	private boolean infoConvenio;
+	
+	@JoinColumn(nullable = false)
 	private String data;
+	
+	@ManyToOne(targetEntity = ConvenioPaciente.class)
+	@JoinColumn(name = "convenio_id", nullable = true)
 	private ConvenioPaciente convenio;
 	
 	public long getId() {

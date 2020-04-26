@@ -1,25 +1,23 @@
 package com.pediatrics.models;
 
-import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "responsaveis")
 public class Responsavel extends Pessoa{
+	
+	@OneToMany(targetEntity = Crianca.class)
+	private List<Crianca> crianca;
 
-	private long id;
-	private ArrayList<Crianca> crianca;
-
-	public long getId() {
-		return this.id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public ArrayList<Crianca> getCrianca() {
+	public List<Crianca> getCrianca() {
 		return this.crianca;
 	}
 
-	public void setCrianca(ArrayList<Crianca> crianca) {
+	public void setCrianca(List<Crianca> crianca) {
 		this.crianca = crianca;
 	}
 
