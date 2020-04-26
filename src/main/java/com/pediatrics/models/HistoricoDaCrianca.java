@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +18,10 @@ public class HistoricoDaCrianca {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	
+	@OneToOne(targetEntity = Crianca.class)
+	@JoinColumn(name = "crianca_id")
+	private Crianca crianca;
 	
 	@OneToMany(targetEntity = MedidasDaCrianca.class)
 	@JoinColumn(name = "historico_id", nullable = true)
