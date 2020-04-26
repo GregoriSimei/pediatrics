@@ -1,5 +1,6 @@
-package com.pediatrics.models;
+package com.pediatrics.app.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -13,7 +14,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "historicos")
-public class HistoricoDaCrianca {
+public class Historico implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,9 +26,9 @@ public class HistoricoDaCrianca {
 	@JoinColumn(name = "crianca_id")
 	private Crianca crianca;
 	
-	@OneToMany(targetEntity = MedidasDaCrianca.class)
+	@OneToMany(targetEntity = Medidas.class)
 	@JoinColumn(name = "historico_id", nullable = true)
-	private List<MedidasDaCrianca> medidas;
+	private List<Medidas> medidas;
 	
 	@OneToMany(targetEntity = Vacina.class)
 	@JoinColumn(name = "historico_id", nullable = true)
@@ -37,10 +40,10 @@ public class HistoricoDaCrianca {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public List<MedidasDaCrianca> getMedidas() {
+	public List<Medidas> getMedidas() {
 		return this.medidas;
 	}
-	public void setMedidas(List<MedidasDaCrianca> medidas) {
+	public void setMedidas(List<Medidas> medidas) {
 		this.medidas = medidas;
 	}
 	public List<Vacina> getVacinas() {

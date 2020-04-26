@@ -1,4 +1,4 @@
-package com.pediatrics.models;
+package com.pediatrics.app.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +22,15 @@ public class Pessoa {
 	@JoinColumn(nullable = true)
 	private String cpf;
 	
+	@JoinColumn(nullable = false)
+	private String nascimento;
+	
+	public String getAnivevrsario() {
+		return this.nascimento;
+	}
+	public void setAnivevrsario(String anivevrsario) {
+		this.nascimento = anivevrsario;
+	}
 	public String getNome() {
 		return this.nome;
 	}

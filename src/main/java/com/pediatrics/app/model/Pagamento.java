@@ -1,4 +1,6 @@
-package com.pediatrics.models;
+package com.pediatrics.app.model;
+
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +12,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "pagamentos")
-public class Pagamento {
+public class Pagamento implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -26,9 +30,9 @@ public class Pagamento {
 	@JoinColumn(nullable = false)
 	private String data;
 	
-	@ManyToOne(targetEntity = ConvenioPaciente.class)
+	@ManyToOne(targetEntity = Convenio.class)
 	@JoinColumn(name = "convenio_id", nullable = true)
-	private ConvenioPaciente convenio;
+	private Convenio convenio;
 	
 	public long getId() {
 		return this.id;
@@ -42,10 +46,10 @@ public class Pagamento {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public ConvenioPaciente isConvenio() {
+	public Convenio isConvenio() {
 		return this.convenio;
 	}
-	public void setConvenio(ConvenioPaciente convenio) {
+	public void setConvenio(Convenio convenio) {
 		this.convenio = convenio;
 	}
 	public String getData() {
