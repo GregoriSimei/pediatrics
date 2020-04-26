@@ -19,7 +19,7 @@ public class CriancaController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView initialPage() {
-		ModelAndView index = new ModelAndView("crianca/index");
+		ModelAndView index = new ModelAndView("/crianca/index");
 		Iterable<Crianca> criancas = criancaRepository.findAll();
 		index.addObject("criancas", criancas);
 		return index;
@@ -27,7 +27,7 @@ public class CriancaController {
 	
 	@RequestMapping(value = "cadastrar", method = RequestMethod.GET)
 	public ModelAndView formPage(){
-		ModelAndView cadastro = new ModelAndView("/cadastrar");
+		ModelAndView cadastro = new ModelAndView("/crianca/cadastrar");
 		return cadastro;
 	}
 	
