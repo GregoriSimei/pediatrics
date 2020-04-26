@@ -30,11 +30,5 @@ public class Medicamento {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getQuantidade() {
-		return this.quantidade;
-	}
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
 	
 }
