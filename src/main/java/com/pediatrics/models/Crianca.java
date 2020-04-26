@@ -9,9 +9,6 @@ import javax.persistence.Table;
 @Table(name = "criancas")
 public class Crianca extends Pessoa{
 	
-	@ManyToOne(targetEntity = Responsavel.class)
-	private Responsavel responsavel;
-	
 	@OneToOne(targetEntity = HistoricoDaCrianca.class)
 	private HistoricoDaCrianca historico;
 
@@ -21,14 +18,6 @@ public class Crianca extends Pessoa{
 
 	public void setHistorico(HistoricoDaCrianca historico) {
 		this.historico = historico;
-	}
-
-	public Responsavel getResponsavel() {
-		return this.responsavel;
-	}
-
-	public void setResponsavel(Responsavel responsavel) {
-		this.responsavel = responsavel;
 	}
 	
 }
