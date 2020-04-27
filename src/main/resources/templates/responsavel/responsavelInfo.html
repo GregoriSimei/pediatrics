@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="pt-br">
+<head>
+	<title>Informações Do Responsavel</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<div th:each="responsavel : ${responsavel}">
+		<nav>
+			<h3><a href="/responsavel/">Responsavel</a> / <span th:text="${responsavel.nome}"></span></h3>
+		</nav>
+		<p>
+		Nome: <span th:text="${responsavel.nome}"></span> <br/>
+		Nascimento: <span th:text="${responsavel.nascimento}"></span><br/>
+		CPF: <span th:text="${responsavel.cpf}"></span> <br/>
+		</p>
+	</div>
+</body>
+</html>
