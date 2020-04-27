@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="pt-br">
+<head>
+	<title>Criancas Cadastradas</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<p th:each="crianca : ${crianca}">
+	Nome: <span th:text="${crianca.nome}"></span> <br/>
+	Nascimento: <span th:text="${crianca.nascimento}"></span><br/>
+	CPF: <span th:text="${crianca.cpf}"></span> <br/>
+	</p>
+</body>
+</html>

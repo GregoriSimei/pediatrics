@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import com.pediatrics.app.model.Crianca;
 
 public interface CriancaRepository extends CrudRepository<Crianca, String> {
-
+	Crianca findById(long ID);
 }
