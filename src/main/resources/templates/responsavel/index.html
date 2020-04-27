@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Consultar Responsaveis</title>
+</head>
+<body>
+	<nav>
+		<a href="/crianca/cadastrar">Cadastrar Responsavel</a>
+	</nav>
+	<nav>
+		<h3>Responsavel</h3>
+	</nav>
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Nascimento</th>
+				<th>CPF</th>
+				<th>RG</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="responsavel : ${responsaveis}">
+				<td>
+					<a>
+						<span th:text="${responsavel.nome}"></span>
+					</a>
+				</td>
+				<td><span th:text="${responsavel.nascimento}"></span></td>
+				<td><span th:text="${responsavel.cpf}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
