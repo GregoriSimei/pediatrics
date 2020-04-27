@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pediatrics.app.model.Crianca;
 import com.pediatrics.app.model.Responsavel;
 import com.pediatrics.app.repository.ResponsavelRepository;
 
@@ -19,7 +18,7 @@ public class ResponsavelController {
 	private ResponsavelRepository responsavelRepository;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView responsavelPage() {
+	public ModelAndView initialPage() {
 		ModelAndView index = new ModelAndView("/responsavel/index");
 		Iterable<Responsavel> responsaveis = responsavelRepository.findAll();
 		index.addObject("responsaveis", responsaveis);
