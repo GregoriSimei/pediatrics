@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Consultar Responsaveis</title>
+</head>
+<body>
+	<nav>
+		<a href="/responsavel/cadastrar">Cadastrar Responsavel</a>
+	</nav>
+	<nav>
+		<h3>Responsavel</h3>
+	</nav>
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Nascimento</th>
+				<th>Especialização</th>
+				<th>CRM</th>
+				<th>CPF</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="doutor : ${doutores}">
+				<td>
+					<a th:href="${(#mvc.url('RC#doutorPage').arg(0, doutor.id)).build()}">
+						<span th:text="${doutor.nome}"></span>
+					</a>
+				</td>
+				<td><span th:text="${doutor.nascimento}"></span></td>
+				<td><span th:text="${doutor.especializacao}"></span></td>
+				<td><span th:text="${doutor.crm}"></span></td>
+				<td><span th:text="${doutor.cpf}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
