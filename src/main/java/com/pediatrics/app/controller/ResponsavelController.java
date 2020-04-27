@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pediatrics.app.model.Crianca;
 import com.pediatrics.app.model.Responsavel;
 import com.pediatrics.app.repository.ResponsavelRepository;
 
@@ -31,6 +32,19 @@ public class ResponsavelController {
 		Responsavel responsavel = responsavelRepository.findById(id);
 		responsavelInfoPage.addObject("responsavel", responsavel);
 		return responsavelInfoPage;
+	}
+	
+	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+	public ModelAndView formPage(){
+		ModelAndView cadastro = new ModelAndView("/responsavel/cadastrar");
+		return cadastro;
+	}
+	
+	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+	public String formPage(Responsavel responsavel){
+		System.out.println(responsavel.getNascimento());
+		responsavelRepository.save(responsavel);
+		return "redirect:/responsavel/cadastrar";
 	}
 
 }
