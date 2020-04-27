@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="pt-br">
+<head>
+	<title>Informações Da Criança</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<div th:each="crianca : ${crianca}">
+		<nav>
+			<h3><a href="/crianca/">Crianca</a> / <span th:text="${crianca.nome}"></span></h3>
+		</nav>
+		<p>
+		Nome: <span th:text="${crianca.nome}"></span> <br/>
+		Nascimento: <span th:text="${crianca.nascimento}"></span><br/>
+		CPF: <span th:text="${crianca.cpf}"></span> <br/>
+		</p>
+	</div>
+</body>
+</html>

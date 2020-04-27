@@ -25,10 +25,10 @@ public class Pessoa {
 	@JoinColumn(nullable = false)
 	private String nascimento;
 	
-	public String getAnivevrsario() {
+	public String getNascimento() {
 		return this.nascimento;
 	}
-	public void setAnivevrsario(String anivevrsario) {
+	public void setNascimento(String anivevrsario) {
 		this.nascimento = anivevrsario;
 	}
 	public String getNome() {
