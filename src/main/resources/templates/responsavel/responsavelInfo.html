@@ -9,6 +9,9 @@
 <body>
 	<div th:each="responsavel : ${responsavel}">
 		<nav>
+			<a href="/responsavel/cadastrar">Cadastrar Responsavel</a>
+		</nav>
+		<nav>
 			<h3><a href="/responsavel/">Responsavel</a> / <span th:text="${responsavel.nome}"></span></h3>
 		</nav>
 		<p>
