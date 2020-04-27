@@ -26,8 +26,8 @@ public class DoutorController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ModelAndView responsavelPage(@PathVariable("id") Long id) {
-		ModelAndView doutorInfoPage = new ModelAndView("/doutor/responsavelInfo");
+	public ModelAndView doutorPage(@PathVariable("id") Long id) {
+		ModelAndView doutorInfoPage = new ModelAndView("/doutor/doutorInfo");
 		Doutor doutor = doutorRepository.findById(id);
 		doutorInfoPage.addObject("doutor", doutor);
 		return doutorInfoPage;

@@ -27,7 +27,7 @@
 		<tbody>
 			<tr th:each="doutor : ${doutores}">
 				<td>
-					<a th:href="${(#mvc.url('RC#doutorPage').arg(0, doutor.id)).build()}">
+					<a th:href="${(#mvc.url('DC#doutorPage').arg(0, doutor.id)).build()}">
 						<span th:text="${doutor.nome}"></span>
 					</a>
 				</td>
