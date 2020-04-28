@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pediatrics.app.model.Crianca;
+import com.pediatrics.app.model.Responsavel;
 import com.pediatrics.app.repository.CriancaRepository;
+import com.pediatrics.app.repository.ResponsavelRepository;
 
 @Controller
 @RequestMapping("/crianca")
@@ -16,6 +18,7 @@ public class CriancaController {
 	
 	@Autowired
 	private CriancaRepository criancaRepository;
+	private ResponsavelRepository responsavelRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView initialPage() {
@@ -45,5 +48,16 @@ public class CriancaController {
 		infoCrianca.addObject("crianca", crianca);
 		return infoCrianca;
 	}
+	
+	/* 
+	 
+	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
+	public String criancaPagePost(@PathVariable("id") Long id, Responsavel responsavel) {
+		Crianca crianca = criancaRepository.findById(id);
+		responsavelRepository.save(responsavel);
+		System.out.println("Adicionou");
+		return "redirect:/crianca/{id}";
+	} 
+	*/ 
 	
 }

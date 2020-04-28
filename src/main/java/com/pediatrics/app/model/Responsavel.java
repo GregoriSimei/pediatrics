@@ -23,5 +23,9 @@ public class Responsavel extends Pessoa implements Serializable{
 	public void setCrianca(List<Crianca> crianca) {
 		this.crianca = crianca;
 	}
+	
+	public void addCrianca(Crianca crianca) {
+		this.crianca.add(crianca);
+	}
 
 }

@@ -30,10 +30,23 @@ public class Pagamento implements Serializable {
 	@JoinColumn(nullable = false)
 	private String data;
 	
+	@JoinColumn(nullable = true)
+	private String situacao;
+	
 	@ManyToOne(targetEntity = Convenio.class)
 	@JoinColumn(name = "convenio_id", nullable = true)
 	private Convenio convenio;
 	
+	public String getSituacao() {
+		return situacao;
+	}
+	
+	public void setSituação(Boolean pago) {
+		this.situacao = pago ? "Pago" : "Não pago";
+	}
+	public Convenio getConvenio() {
+		return this.convenio;
+	}
 	public long getId() {
 		return this.id;
 	}

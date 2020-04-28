@@ -8,14 +8,29 @@
 </head>
 <body>
 	<div th:each="crianca : ${crianca}">
+	
 		<nav>
 			<h3><a href="/">Administração</a> / <a href="/crianca/">Crianca</a> / <span th:text="${crianca.nome}"></span></h3>
 		</nav>
+		
 		<p>
 		Nome: <span th:text="${crianca.nome}"></span> <br/>
 		Nascimento: <span th:text="${crianca.nascimento}"></span><br/>
 		CPF: <span th:text="${crianca.cpf}"></span> <br/>
 		</p>
+		
+		<h5> Cadastrar Responsavel </h5>
+		<form method="post">
+	
+			<label>Nome :</label>
+			<input type="text" name="nome">
+			<label>Data de Nascimento :</label>
+			<input type="date" name="nascimento">
+			<label>CPF :</label>
+			<input type="text" name="cpf">
+		
+		<button>Enviar</button>
+	</form>
 	</div>
 </body>
 </html>

@@ -13,6 +13,14 @@ public class Crianca extends Pessoa implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@ManyToOne(targetEntity = Responsavel.class)
-	public Responsavel responsavel;
+	private Responsavel responsavel;
+
+	public Responsavel getResponsavel() {
+		return responsavel;
+	}
+
+	public void setResponsavel(Responsavel responsavel) {
+		this.responsavel = responsavel;
+	}
 	
 }
