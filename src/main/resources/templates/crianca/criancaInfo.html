@@ -9,7 +9,7 @@
 <body>
 	<div th:each="crianca : ${crianca}">
 		<nav>
-			<h3><a href="/crianca/">Crianca</a> / <span th:text="${crianca.nome}"></span></h3>
+			<h3><a href="/">Administração</a> / <a href="/crianca/">Crianca</a> / <span th:text="${crianca.nome}"></span></h3>
 		</nav>
 		<p>
 		Nome: <span th:text="${crianca.nome}"></span> <br/>

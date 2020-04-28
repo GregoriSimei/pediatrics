@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="pt-br">
+<head>
+	<title>Informações Do Doutor</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<div th:each="doutor : ${doutor}">
+		<nav>
+			<h3><a href="/">Administração</a> / <a href="/doutor/">Doutor</a> / <span th:text="${doutor.nome}"></span></h3>
+		</nav>
+		<p>
+		Nome: <span th:text="${doutor.nome}"></span> <br/>
+		Nascimento: <span th:text="${doutor.nascimento}"></span><br/>
+		Especializaçao: <span th:text="${doutor.especializacao}"></span><br/>
+		CRM: <span th:text="${doutor.crm}"></span><br/>
+		CPF: <span th:text="${doutor.cpf}"></span> <br/>
+		</p>
+	</div>
+</body>
+</html>
